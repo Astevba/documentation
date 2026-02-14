@@ -326,24 +326,15 @@ for each module in the Flatpak manifest is installed to
 `$FLATPAK_DEST/share/licenses/$FLATPAK_ID`.
 
 Recent versions of Flatpak builder can do this automatically for common
-license file names, so in most cases nothing needs to be done. But if
-it doesn't, please try to use the `license-files` key in the manifest
-to specify an array of paths for license files, relative to the source
-directory.
-
-Another option is to use `post-install` commands to install the license
-files:
+license file names as long as the module does not use
+`buildsystem: simple` in which case the licence file should be manually
+installed.
 
 ```yaml
   - name: my-module
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DFOOBAR=ON
-      - ...
-    post-install:
+    buildsystem: simple
+    build-commands:
       - install -Dm0644 LICENSE -t ${FLATPAK_DEST}/share/licenses/$FLATPAK_ID/my-module
-    sources:
-      - ...
 ```
 
 ## Permissions
