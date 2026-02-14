@@ -75,6 +75,12 @@ frameworks or toolkits will not be accepted. Multiple submissions of a
 forked app with minimal changes in the fork (in terms of functionality,
 content, visuals, or user experience) will not be accepted.
 
+#### Conflicting submissions
+
+If an application is provided by the upstream author or developers
+as a Flatpak outside of Flathub, third party submissions of it to
+Flathub may be rejected.
+
 #### Software using emulation or translation layers
 
 Windows software submissions that are using Wine or any submissions
